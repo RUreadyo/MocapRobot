@@ -37,6 +37,29 @@
   href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
+  <!-- Add your CSS here -->
+  <style>
+    #tree {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 767px) {
+      #tree {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 768px) {
+      #tree {
+        width: 50%;
+      }
+    }
+  </style>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
@@ -132,10 +155,14 @@
 
 <!-- Teaser image -->
 <section class="hero teaser">
-  <div class="container is-widescreen">
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="hero-body">
-        <img src="static/images/teaser.png" alt="Teaser image" id="tree" style="width: 100%; display: block; margin: 0 auto;" height="auto">
+        <picture>
+          <source media="(max-width: 767px)" srcset="static/images/teaser.png">
+          <source media="(min-width: 768px)" srcset="static/images/teaser.png">
+          <img src="static/images/teaser.png" alt="Teaser image" id="tree"">
+        </picture>
       </div>
     </div>
   </div>
